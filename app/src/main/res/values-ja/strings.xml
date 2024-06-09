@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">最強</string>
+    <string name="default_error_message">入力間違いました</string>
+    <string name="app_icon_desc">面白いアプリアイコン</string>
+    <string name="word_def_reading">読み方</string>
+    <string name="word_def_meaning">意味</string>
+    <string name="word_def_synonym">類義語</string>
+    <string name="word_def_antonym">対義語</string>
+    <string name="word_def_examples">例文</string>
+    <string name="settings">設定</string>
+    <string name="back_nav_desc">前へのボタン</string>
+    <string name="search">検索</string>
+    <string name="dictionary_empty_search_label">言葉を検索...</string>
+    <string name="preview_thumbnail_desc">選ばれた動画のサムネイル</string>
+    <string name="video_file_select_placeholder">動画を選択</string>
+    <string name="subtitle_file_select_placeholder">字幕 (SRT形式)を選択</string>
+    <string name="play_btn_text">再生</string>
+    <string name="play_as_audio_btn_text">オーディオ再生</string>
+</resources>

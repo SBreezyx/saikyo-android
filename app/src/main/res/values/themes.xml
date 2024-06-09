@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Saikyo" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Overlay" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="android:windowActivityTransitions">false</item>
+
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowEnterTransition">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+        <item name="android:windowExitTransition">@null</item>
+        <item name="android:windowHideAnimation">@null</item>
+        <item name="android:windowReenterTransition">@null</item>
+        <item name="android:windowReturnTransition">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+</resources>

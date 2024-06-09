@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name" translatable="false">最強</string>
+    <string name="default_error_message">Invalid input</string>
+    <string name="app_icon_desc">a humorous app icon</string>
+    <string name="settings">settings</string>
+    <string name="back_nav_desc">A backwards navigation button</string>
+    <string name="search">Search</string>
+    <string name="dictionary_empty_search_label">Search a word...</string>
+    <string name="word_def_reading">Reading</string>
+    <string name="word_def_meaning">Meaning</string>
+    <string name="word_def_synonym">Synonyms</string>
+    <string name="word_def_antonym">Antonyms</string>
+    <string name="word_def_examples">Example Sentences</string>
+    <string name="preview_thumbnail_desc">Thumbnail for the video you selected</string>
+    <string name="video_file_select_placeholder">Select a video file ...</string>
+    <string name="subtitle_file_select_placeholder">Select a subtitle (SRT) file</string>
+    <string name="play_btn_text">Play</string>
+    <string name="play_as_audio_btn_text">Play as audio</string>
+    <string name="previous_subtitle_btn_desc">Previous subtitle</string>
+    <string name="next_subtitle_btn_desc">Next subtitle</string>
+    <string name="settings_title">Settings</string>
+    <string name="progress_next_button_default_desc">Go to the next screen</string>
+    <string name="local_file_access_settings_title">Local File Access</string>
+    <string name="local_media_desc_template">Select which folders $$ is able to open media from. Files added to the selected folders are available to view anytime.</string>
+    <string name="cancel_nav_desc">Cancel the current operation</string>
+    <string name="add_local_media_folder_desc">Add folder</string>
+    <string name="delete_local_media_folder_desc">Delete folders</string>
+    <string name="live_dict_btn_desc">Start the LiveDict screen overlay feature.</string>
+    <string name="word_search_button_desc">Search a word</string>
+</resources>
