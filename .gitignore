@@ -1,0 +1,6 @@
+.DS_Store
+.gradle
+.kotlin
+
+# this is a local folder on my development machine
+assets
