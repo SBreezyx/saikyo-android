@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -46,11 +48,11 @@ fun MainNavigation(navCtrl: NavHostController = rememberNavController()) {
     ) {
         composable<Routes.Home> {
             HomeScreen(
-                navToDictionary = { navCtrl.navigate(Routes.Dictionary) },
-                navToLanguageReactor = { navCtrl.navigate(Routes.LanguageReactor) },
-                navToSettings = { navCtrl.navigate(Routes.Settings) },
+                navToDictionary = { navCtrl.navigateLateral(Routes.Dictionary) },
+                navToLanguageReactor = { navCtrl.navigateLateral(Routes.LanguageReactor) },
+                navToSettings = { navCtrl.navigateLateral(Routes.Settings) },
 //                navToExit = { (navCtrl.context as Activity).finishAndRemoveTask() },
-                navToYoutubeDL = { navCtrl.navigate(Routes.LR2) },
+                navToYoutubeDL = { navCtrl.navigateLateral(Routes.LR2) },
             )
         }
 
@@ -65,15 +67,15 @@ fun MainNavigation(navCtrl: NavHostController = rememberNavController()) {
             val lemmaId = it.toRoute<Routes.WordDefinition>().lemmaId
             DefinitionScreen(
                 lemmaId,
-                { navCtrl.navigate(Routes.Settings) },
+                { navCtrl.navigateLateral(Routes.Settings) },
                 { navCtrl.navigateUp() }
             )
         }
 
         composable<Routes.LanguageReactor> {
             LanguageReactor(
-                { navCtrl.navigate(Routes.Home) },
-                { navCtrl.navigate(Routes.Settings) },
+                { navCtrl.navigateLateral(Routes.Home) },
+                { navCtrl.navigateLateral(Routes.Settings) },
                 { video, subtitle -> navCtrl.navigate(Routes.VideoPlayer(video, subtitle)) },
                 { audio, subtitle -> navCtrl.navigate(Routes.AudioPlayer(audio, subtitle)) }
             )
@@ -81,8 +83,8 @@ fun MainNavigation(navCtrl: NavHostController = rememberNavController()) {
 
         composable<Routes.LR2> {
             LR2(
-                navToDict = { navCtrl.navigate(Routes.Dictionary) },
-                navToLr = { navCtrl.navigate(Routes.LanguageReactor) },
+                navToDict = { navCtrl.navigateLateral(Routes.Dictionary) },
+                navToLr = { navCtrl.navigateLateral(Routes.LanguageReactor) },
                 navBack = { navCtrl.navigateUp() }
             )
         }
@@ -109,8 +111,8 @@ fun MainNavigation(navCtrl: NavHostController = rememberNavController()) {
             composable<Routes.Settings.AllSettings> {
                 AllSettingsScreen(
                     navToLocalFileAccess = { navCtrl.navigate(Routes.Settings.LocalMediaSelection) },
-                    navToHome = { navCtrl.navigate(Routes.Home) },
-                    navToLanguageReactor = { navCtrl.navigate(Routes.LanguageReactor) }
+                    navToHome = { navCtrl.navigateLateral(Routes.Home) },
+                    navToLanguageReactor = { navCtrl.navigateLateral(Routes.LanguageReactor) }
                 )
             }
 
