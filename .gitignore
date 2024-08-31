@@ -1,6 +1,7 @@
 .DS_Store
 .gradle
 .kotlin
+**/**/build
 
 # this is a local folder on my development machine
 assets
