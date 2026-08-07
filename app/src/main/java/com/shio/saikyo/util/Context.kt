@@ -8,16 +8,16 @@ import android.os.Build
 import android.os.Vibrator
 import android.os.VibratorManager
 import android.view.WindowManager
-import com.shio.saikyo.OverlayActivity
+//import com.shio.saikyo.OverlayActivity
 
-fun Context.startOverlayActivity(
-    intent: Intent = Intent().apply {
-        setClass(this@startOverlayActivity, OverlayActivity::class.java)
-        flags = flags or
-                Intent.FLAG_ACTIVITY_NEW_TASK or
-                Intent.FLAG_ACTIVITY_NO_ANIMATION
-    }
-) = startActivity(intent)
+//fun Context.startOverlayActivity(
+//    intent: Intent = Intent().apply {
+//        setClass(this@startOverlayActivity, OverlayActivity::class.java)
+//        flags = flags or
+//                Intent.FLAG_ACTIVITY_NEW_TASK or
+//                Intent.FLAG_ACTIVITY_NO_ANIMATION
+//    }
+//) = startActivity(intent)
 
 fun Context.getWindowManager() = getSystemService(WindowManager::class.java)
 

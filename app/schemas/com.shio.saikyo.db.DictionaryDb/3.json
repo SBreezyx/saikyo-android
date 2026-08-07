@@ -1,0 +1,204 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "2597bdc52ce4e7557ec98db828fc74e5",
+    "entities": [
+      {
+        "tableName": "lemma",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`lemma_id` INTEGER NOT NULL, `seq_no` INTEGER NOT NULL, `kanji` TEXT NOT NULL, `kana` TEXT NOT NULL, `meaning` TEXT, PRIMARY KEY(`lemma_id`))",
+        "fields": [
+          {
+            "fieldPath": "lemmaId",
+            "columnName": "lemma_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seqNo",
+            "columnName": "seq_no",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kanji",
+            "columnName": "kanji",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kana",
+            "columnName": "kana",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "meaning",
+            "columnName": "meaning",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "lemma_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "lexicon",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`term` TEXT NOT NULL, `lemma_id` INTEGER NOT NULL, PRIMARY KEY(`lemma_id`, `term`))",
+        "fields": [
+          {
+            "fieldPath": "term",
+            "columnName": "term",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lemmaId",
+            "columnName": "lemma_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "lemma_id",
+            "term"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "antonym",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`lemma1_id` INTEGER NOT NULL, `lemma2_id` INTEGER, `ant` TEXT NOT NULL, PRIMARY KEY(`lemma1_id`, `ant`))",
+        "fields": [
+          {
+            "fieldPath": "lemmaId1",
+            "columnName": "lemma1_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lemmaId2",
+            "columnName": "lemma2_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ant",
+            "columnName": "ant",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "lemma1_id",
+            "ant"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "example",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`example_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `example` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "exampleId",
+            "columnName": "example_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "example",
+            "columnName": "example",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "example_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "example_lemma",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`example_id` INTEGER NOT NULL, `lemma_id` INTEGER NOT NULL, PRIMARY KEY(`example_id`, `lemma_id`))",
+        "fields": [
+          {
+            "fieldPath": "exampleId",
+            "columnName": "example_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lemmaId",
+            "columnName": "lemma_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "example_id",
+            "lemma_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "synonym",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`lemma1_id` INTEGER NOT NULL, `lemma2_id` INTEGER, `syn` TEXT NOT NULL, PRIMARY KEY(`lemma1_id`, `syn`))",
+        "fields": [
+          {
+            "fieldPath": "lemmaId1",
+            "columnName": "lemma1_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lemmaId2",
+            "columnName": "lemma2_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "syn",
+            "columnName": "syn",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "lemma1_id",
+            "syn"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2597bdc52ce4e7557ec98db828fc74e5')"
+    ]
+  }
+}

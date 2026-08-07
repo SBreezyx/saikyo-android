@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
 import com.shio.saikyo.ai.connectToGemini
 import com.shio.saikyo.db.MediaDb
 import com.shio.saikyo.db.DictionaryDb
-import com.shio.saikyo.ocr.MLKit
+//import com.shio.saikyo.ocr.MLKit
 import com.shio.saikyo.ui.ContextMenuItem
 
 
@@ -17,7 +17,7 @@ class SaikyoApp : Application() {
     val ai by lazy { connectToGemini() }
 
     // TODO: replace this with Cloud Vision API
-    val ocr by lazy { MLKit() }
+//    val ocr by lazy { MLKit() }
 
     val textProcessors by lazy {
         val apps = mutableListOf<ContextMenuItem>()

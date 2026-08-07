@@ -1,5 +1,6 @@
 package com.shio.saikyo.ai
 
+import androidx.media3.common.util.Log
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.BlockThreshold
 import com.google.ai.client.generativeai.type.GenerateContentResponse
@@ -87,12 +88,13 @@ class Gemini(
             )
         } catch (e: Exception) {
             // I guess this can happen due to a sudden cancellation?
+            Log.d("ok", e.toString())
             return null
         }
     }
 }
 
 fun connectToGemini(
-    modelName: String = "gemini-pro",
+    modelName: String = "gemini-3.5-flash-lite",
     apiKey: String = BuildConfig.apiKey
 ) = Gemini(modelName, apiKey)

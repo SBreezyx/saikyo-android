@@ -236,8 +236,8 @@ abstract class DictionaryDb : RoomDatabase() {
                     DictionaryDb::class.java,
                     "ddb.sqlite3"
                 )
-                    .fallbackToDestructiveMigration() // TODO: proper migrations
-                    .createFromAsset("db/lemmas_v1.db")
+//                    .fallbackToDestructiveMigration() // TODO: proper migrations
+//                    .createFromAsset("db/lemmas_v1.db")
                     .build()
 
                 return@synchronized instance!!

@@ -36,7 +36,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.media3.session.MediaBrowser
-import com.shio.saikyo.LiveDictService
+//import com.shio.saikyo.LiveDictService
 import com.shio.saikyo.R
 import com.shio.saikyo.ui.primitives.DefaultAppBar
 import com.shio.saikyo.ui.primitives.DefaultNavBar
@@ -45,26 +45,26 @@ import com.shio.saikyo.ui.theme.SaikyoTheme
 import com.shio.saikyo.util.forEachIndexed
 import com.shio.saikyo.youtubedl.YoutubeDL
 
-@Composable
-fun rememberMediaProjectionLauncher(onSuccess: () -> Unit): () -> Unit {
-    val ctx = LocalContext.current
-    val mMediaProjection = ctx.getSystemService(MediaProjectionManager::class.java)
-    val startLiveDict = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (it.resultCode == Activity.RESULT_OK) {
-            val fgsIntent = Intent(ctx, LiveDictService::class.java).apply {
-                putExtra("resultCode", it.resultCode)
-                putExtra("resultIntent", it.data)
-            }
-            ctx.startForegroundService(fgsIntent)
-
-            onSuccess()
-        } else {
-            // do nothing; the user denied our request for some reason
-        }
-    }
-
-    return { startLiveDict.launch(mMediaProjection.createScreenCaptureIntent()) }
-}
+//@Composable
+//fun rememberMediaProjectionLauncher(onSuccess: () -> Unit): () -> Unit {
+//    val ctx = LocalContext.current
+//    val mMediaProjection = ctx.getSystemService(MediaProjectionManager::class.java)
+//    val startLiveDict = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+//        if (it.resultCode == Activity.RESULT_OK) {
+//            val fgsIntent = Intent(ctx, LiveDictService::class.java).apply {
+//                putExtra("resultCode", it.resultCode)
+//                putExtra("resultIntent", it.data)
+//            }
+//            ctx.startForegroundService(fgsIntent)
+//
+//            onSuccess()
+//        } else {
+//            // do nothing; the user denied our request for some reason
+//        }
+//    }
+//
+//    return { startLiveDict.launch(mMediaProjection.createScreenCaptureIntent()) }
+//}
 
 @Composable
 fun LiveDictButton(

@@ -16,7 +16,6 @@ import androidx.compose.ui.platform.LocalTextToolbar
 import androidx.compose.ui.platform.LocalView
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import com.shio.saikyo.notif.LIVE_DICT_NOTIF
 import com.shio.saikyo.ui.ComposeContextMenu
 import com.shio.saikyo.ui.ContextMenuItem
 import com.shio.saikyo.ui.LocalTextProcessors
@@ -69,11 +68,11 @@ open class SaikyoActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // TODO: consider if this impacts start-up time and can be moved to a different thread
-        getSystemService(NotificationManager::class.java).createNotificationChannels(listOf(
-            NotificationChannel(LIVE_DICT_NOTIF, "LiveDict", NotificationManager.IMPORTANCE_LOW).apply {
-                // TODO: string resource the below
-                description = "See if the live dictionary feature is running across your device"
-            }
-        ))
+//        getSystemService(NotificationManager::class.java).createNotificationChannels(listOf(
+//            NotificationChannel(LIVE_DICT_NOTIF, "LiveDict", NotificationManager.IMPORTANCE_LOW).apply {
+//                // TODO: string resource the below
+//                description = "See if the live dictionary feature is running across your device"
+//            }
+//        ))
     }
 }
